@@ -1,0 +1,78 @@
+.interplay-plugin .clear{clear:both}.interplay-plugin.error{padding:5px;background-color:#ffb7b7;border:1px solid #f00;margin:20px 0 20px 0}.interplay-plugin.message{padding:5px;background-color:#ffefbf;border:1px solid #fc3;margin:10px 0 10px 0}.interplay-plugin.treelist h3{font-size:18px;font-weight:bold;padding:0;margin:10px 0 10px 0}.interplay-plugin.treelist h4{font-size:14px;font-weight:bold;padding:0;margin:10px 0 10px 20px}.interplay-plugin.treelist .event{padding:0;margin:0 0 15px 40px}.interplay-plugin.treelist .leader{padding:0;margin:0 0 15px 40px}.interplay-plugin.treelist .performing-group{padding:0;margin:0 0 15px 40px}.interplay-plugin.events .event .title{font-weight:bold;border-top:1px solid #666}.interplay-plugin.events .event .leader-list .leader{margin:0}.interplay-plugin.event .title{font-size:18px;border-bottom:1px solid;margin-bottom:5px;padding-bottom:3px}.interplay-plugin.event .subtitle{margin-top:5px;margin-bottom:10px}.interplay-plugin.event .leaders-list{margin-top:10px;margin-bottom:10px}.interplay-plugin.event .leaders-list .leader{margin:0;font-weight:bold}.interplay-plugin.event .location{margin-top:10px;margin-bottom:10px;font-size:14px;font-weight:bold}.interplay-plugin.event .hooktitle{margin-top:10px;margin-bottom:10px}.interplay-plugin.event .description{margin-top:10px;margin-bottom:10px}.interplay-plugin.event .time{margin-top:10px;margin-bottom:10px}.interplay-plugin.event .cost{margin-top:10px;margin-bottom:10px;font-weight:bold}.interplay-plugin.event .contact{margin-top:10px;margin-bottom:10px;font-weight:bold}.interplay-plugin.event .venue .label{font-weight:bold;border-bottom:1px solid #999}.interplay-plugin.event .venue .name{margin:10px 0 0 20px;font-weight:bold}.interplay-plugin.event .venue .address{margin:0 0 0 20px}.interplay-plugin.event .venue .location{margin:0 0 10px 20px;font-size:1em;font-weight:normal}.interplay-plugin.event .venue .website{margin:10px 0 0 20px;font-weight:bold}.interplay-plugin.event .venue .description{margin:0 0 10px 20px}.interplay-plugin.event .leaders .label{font-weight:bold;border-bottom:1px solid #999}.interplay-plugin.event .leaders .leader{margin:10px 0 20px 20px}.interplay-plugin.event .leaders .leader .name{font-weight:bold}.interplay-plugin.event .leaders .leader .phone{margin-right:10px}.interplay-plugin.event .leaders .leader .email{margin-right:10px;float:left}.interplay-plugin.event .leaders .leader .email .emailDomain{float:right}.interplay-plugin.event .leaders .leader .email .emailAt{float:right}.interplay-plugin.event .leaders .leader .email .emailName{float:right}.interplay-plugin.event .leaders .leader .website{margin-right:10px}.interplay-plugin.event .leaders .leader .bio{clear:both;padding-top:5px}.interplay-plugin.leaders .leader .name{font-weight:bold;margin-right:10px}.interplay-plugin.leaders .leader .phone{float:left;margin-right:10px}.interplay-plugin.leaders .leader .email{float:left;margin-right:10px}.interplay-plugin.leaders .leader .email .emailDomain{float:right}.interplay-plugin.leaders .leader .email .emailAt{float:right}.interplay-plugin.leaders .leader .email .emailName{float:right}.interplay-plugin.leaders .leader .website{float:left}.interplay-plugin.leaders .leader .leaderBio{text-align:left;clear:both}.interplay-plugin.leaders .leader .leaderBio .bioPhoto{float:right;margin:0 0 10px 10px}.interplay-plugin.performing-groups .performing-group .title{font-weight:bold;margin-right:10px;border-top:1px solid #666}.interplay-plugin.performing-groups .performing-group .email{float:left;margin-right:10px}.interplay-plugin.performing-groups .performing-group .email .emailDomain{float:right}.interplay-plugin.performing-groups .performing-group .email .emailAt{float:right}.interplay-plugin.performing-groups .performing-group .email .emailName{float:right}.interplay-plugin.performing-groups .performing-group .phone{margin-right:10px}.interplay-plugin.performing-groups .performing-group .website{margin-right:10px}.interplay-plugin.calendar-widget{border:1px solid #DDD;background-color:#EEE;margin:10px 0 20px 0}
+.interplay-plugin.calendar-widget .calender{width:100%;text-align:center;margin:0 auto 0 auto}.interplay-plugin.calendar-widget .calender table{width:100%;border-collapse:inherit}.interplay-plugin.calendar-widget .calender table tbody td{width:14%}.interplay-plugin.calendar-widget .calender table td{text-align:center;border:1px solid transparent;margin:1px}.interplay-plugin.calendar-widget .calender table th{text-align:center;border:1px solid transparent;margin:1px}.interplay-plugin.calendar-widget .calender .event-date{font-weight:bold}.interplay-plugin.calendar-widget .calender .current-date{border:1px solid #888}.interplay-plugin.calendar-widget .calender .selected-date{border:1px solid #F00}
+
+
+/** custom css **/
+
+.ui-widget-overlay {
+  background: #999999 none repeat scroll 0 0;
+  opacity: 0.8;
+  position: fixed;
+  z-index: 99;
+}
+.ui-dialog.ui-widget-content {
+  top: 200px;
+}
+.ui-dialog.ui-widget-content {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  padding: 0;
+  z-index: 999;
+}
+
+
+.ui-widget-header {
+  background: #f2f2f2 none repeat scroll 0 0;
+  border: medium none;
+}
+
+.ui-dialog .ui-button.ui-dialog-titlebar-close {
+  background: rgba(0, 0, 0, 0) url("images/close.png") no-repeat scroll 0 0;
+  border: medium none;
+  height: 36px;
+  margin-top: -20px;
+  width: 36px;
+}
+
+.ui-dialog .ui-button span {
+  display: none;
+}
+
+/*.ui-resizable-handle {
+  display: none;
+}*/
+
+.ui-dialog.ui-widget-content {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  padding: 0;
+  z-index: 999;
+}
+
+.fixed_scroll{ overflow: hidden; }
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+
+
+
+.ui-dialog.ui-widget-content {
+  left: 0;
+  margin: auto;
+  right: 12px;
+  width: 330px !important;
+}
+
+
+}

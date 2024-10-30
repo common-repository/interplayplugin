@@ -1,0 +1,270 @@
+<beans>
+	
+	<bean id="DefaultWebServiceUrl" class="com_ajmichels_wppf_data_webServiceUrl" singleton="false">
+		<property name="Domain">
+			<value>${webServiceDomain}</value>
+		</property>
+	</bean>
+	
+	<bean id="AuthService" class="org_interplay_wordpress_auth_service">
+		<property name="OptionManager">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="OptionManager" />
+		</property>
+	</bean>
+	
+	<bean id="EventService" class="org_interplay_wordpress_event_service">
+		<property name="DAO">
+			<ref bean="EventDAO" />
+		</property>
+		<property name="DataService">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="JsonDataService" />
+		</property>
+		<property name="AuthService">
+			<ref bean="AuthService" />
+		</property>
+		<property name="WebServiceUrl">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="DefaultWebServiceUrl" />
+		</property>
+	</bean>
+	
+	<bean id="EventDAO" class="org_interplay_wordpress_event_dao" >
+		<property name="EntityPrototype">
+			<ref bean="Event" />
+		</property>
+		<property name="LeaderDAO">
+			<ref bean="LeaderDAO" />
+		</property>
+		<property name="VenueDAO">
+			<ref bean="VenueDAO" />
+		</property>
+	</bean>
+	
+	<bean id="Event" class="org_interplay_wordpress_event_entity" singleton="false">
+		<property name="OptionManager">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="OptionManager" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderService" class="org_interplay_wordpress_leader_service">
+		<property name="DAO">
+			<ref bean="LeaderDAO" />
+		</property>
+		<property name="DataService">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="JsonDataService" />
+		</property>
+		<property name="AuthService">
+			<ref bean="AuthService" />
+		</property>
+		<property name="WebServiceUrl">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="DefaultWebServiceUrl" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderDAO" class="org_interplay_wordpress_leader_dao">
+		<property name="EntityPrototype">
+			<ref bean="Leader" />
+		</property>
+		<property name="AddressDAO">
+			<ref bean="AddressDAO" />
+		</property>
+		<property name="LeaderTypeDAO">
+			<ref bean="LeaderTypeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="Leader" class="org_interplay_wordpress_leader_entity" singleton="false" />
+	
+	<bean id="LeaderTypeService" class="org_interplay_wordpress_leader_type_service">
+		<property name="DAO">
+			<ref bean="LeaderTypeDAO" />
+		</property>
+		<property name="DataService">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="JsonDataService" />
+		</property>
+		<property name="AuthService">
+			<ref bean="AuthService" />
+		</property>
+		<property name="WebServiceUrl">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="DefaultWebServiceUrl" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderTypeDAO" class="org_interplay_wordpress_leader_type_dao">
+		<property name="EntityPrototype">
+			<ref bean="LeaderType" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderType" class="org_interplay_wordpress_leader_type_entity" singleton="false" />
+	
+	<bean id="PerformingGroupService" class="org_interplay_wordpress_performingGroup_service">
+		<property name="DAO">
+			<ref bean="PerformingGroupDAO" />
+		</property>
+		<property name="DataService">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="JsonDataService" />
+		</property>
+		<property name="AuthService">
+			<ref bean="AuthService" />
+		</property>
+		<property name="WebServiceUrl">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="DefaultWebServiceUrl" />
+		</property>
+	</bean>
+	
+	<bean id="PerformingGroupDAO" class="org_interplay_wordpress_performingGroup_dao">
+		<property name="EntityPrototype">
+			<ref bean="PerformingGroup" />
+		</property>
+		<property name="LeaderDAO">
+			<ref bean="LeaderDAO" />
+		</property>
+		<property name="VenueDAO">
+			<ref bean="VenueDAO" />
+		</property>
+		<property name="AddressDAO">
+			<ref bean="AddressDAO" />
+		</property>
+	</bean>
+	
+	<bean id="PerformingGroup" class="org_interplay_wordpress_performingGroup_entity" singleton="false" />
+		
+	<bean id="VenueDAO" class="org_interplay_wordpress_venue_dao">
+		<property name="EntityPrototype">
+			<ref bean="Venue" />
+		</property>
+		<property name="AddressDAO">
+			<ref bean="AddressDAO" />
+		</property>
+	</bean>
+	
+	<bean id="Venue" class="org_interplay_wordpress_venue_entity" singleton="false" />
+		
+	<bean id="AddressDAO" class="org_interplay_wordpress_address_dao">
+		<property name="EntityPrototype">
+			<ref bean="Address" />
+		</property>
+	</bean>
+	
+	<bean id="Address" class="org_interplay_wordpress_address_entity" singleton="false" />
+	
+	
+	<!-- View Objects -->
+	
+	<bean id="CalendarSettingsView"  singleton="false" class="org_interplay_wordpress_event_calendarSettingsView" />
+	
+	<bean id="CalendarView"          singleton="false" class="org_interplay_wordpress_event_calendarView" />
+	
+	<bean id="CountdownSettingsView" singleton="false" class="org_interplay_wordpress_event_countdownSettingsView" />
+	
+	<bean id="CountdownView"         singleton="false" class="org_interplay_wordpress_event_countdownView" />
+	
+	<bean id="EventListView"         singleton="false" class="org_interplay_wordpress_event_listView">
+		<property name="EventView">
+			<ref bean="EventView" />
+		</property>
+	</bean>
+	
+	<bean id="EventView"             singleton="false" class="org_interplay_wordpress_event_detailsView" />
+	
+	<bean id="LeaderListView"        singleton="false" class="org_interplay_wordpress_leader_listView">
+		<property name="LeaderView">
+			<ref bean="LeaderView" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderView"            singleton="false" class="org_interplay_wordpress_leader_view">
+		<property name="LeaderBioView">
+			<ref bean="LeaderBioView" />
+		</property>
+	</bean>
+	
+	<bean id="LeaderBioView"         singleton="false" class="org_interplay_wordpress_leader_bioView" />
+	
+	<bean id="PerformingGroupListView" singleton="false" class="org_interplay_wordpress_performingGroup_listView">
+		<property name="PerformingGroupView">
+			<ref bean="PerformingGroupView" />
+		</property>
+	</bean>
+	
+	<bean id="PerformingGroupView" singleton="false" class="org_interplay_wordpress_performingGroup_view" />
+	
+	<bean id="PluginSettingsView"  singleton="false" class="org_interplay_wordpress_admin_pluginSettingsView" />
+	
+	
+	<!-- Action Objects -->
+	
+	<bean id="CreateAdminPagesAction" class="org_interplay_wordpress_action_createAdminPages">
+		<property name="PluginSettingsView">
+			<ref bean="PluginSettingsView" />
+		</property>
+		<property name="OptionManager">
+			<!-- Defined in WPPF Service Factory -->
+			<ref bean="OptionManager" />
+		</property>
+	</bean>
+	
+	
+	<bean id="EnqueueResourcesAction" class="org_interplay_wordpress_action_enqueueResources">
+		<property name="PluginUrl">
+			<value>${pluginUrl}</value>
+		</property>
+		<property name="WordPressUrl">
+			<value>${wordpressUrl}</value>
+		</property>
+	</bean>
+	
+	
+	<!-- Shortcode Objects -->
+	
+	<bean id="LeaderListShortcode" class="org_interplay_wordpress_shortcode_leaderList">
+		<property name="LeaderService">
+			<ref bean="LeaderService" />
+		</property>
+		<property name="LeaderTypeService">
+			<ref bean="LeaderTypeService" />
+		</property>
+		<property name="LeaderListView">
+			<ref bean="LeaderListView" />
+		</property>
+	</bean>
+	
+	<bean id="EventListShortcode" class="org_interplay_wordpress_shortcode_eventList">
+		<property name="EventService">
+			<ref bean="EventService" />
+		</property>
+		<property name="ListView">
+			<ref bean="EventListView" />
+		</property>
+	</bean>
+	
+	<bean id="SingleEventShortcode" class="org_interplay_wordpress_shortcode_singleEvent">
+		<property name="EventService">
+			<ref bean="EventService" />
+		</property>
+		<property name="SingleEventView">
+			<ref bean="EventView" />
+		</property>
+	</bean>
+	
+	<bean id="PerformingGroupListShortcode"	class="org_interplay_wordpress_shortcode_performingGroupList">
+		<property name="PerformingGroupService">
+			<ref bean="PerformingGroupService" />
+		</property>
+		<property name="PerformingGroupListView">
+			<ref bean="PerformingGroupListView" />
+		</property>
+	</bean>
+	
+	
+</beans>
